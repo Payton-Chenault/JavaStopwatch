@@ -1,9 +1,9 @@
-name: java-build-and-test-checkstyle
+name: java-and-test-checkstyle
 run-name: ${{ github.actor }} pushed
 on: [push]
 
 jobs:
-  check-if-build-assemble-checkstyle:
+  check-if-assemble-checkstyle:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout project
@@ -17,12 +17,9 @@ jobs:
           build-scan-terms-of-use-agree: "yes"
 
       - name: Run Build
-        run: chmod +x \gradlew build
-
-      - name: Run Assemble
-        run: chmod +x .\gradlew assemble
+        run: chmod 0655 ./gradlew assemble
 
       - name: Run Checkstyle
-        run: chmod +x .\gradlew checkstyleMain
+        run: chmod 0655 ./gradlew checkstyleMain
           
       
