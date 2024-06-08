@@ -17,12 +17,12 @@ jobs:
           build-scan-terms-of-use-agree: "yes"
 
       - name: Run Build
-        run: chmod +x /gradlew build
+        run: chmod +x \gradlew build
 
       - name: Run Assemble
-        run: chmod +x ./gradlew assemble
+        run: chmod +x .\gradlew assemble
 
       - name: Run Checkstyle
-        run: chmod +x ./gradlew checkstyleMain
+        run: chmod +x .\gradlew checkstyleMain
           
       
