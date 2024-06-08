@@ -5,40 +5,50 @@
 <xsl:template match="/">
   <html>
     <head>
-    <title>StopwatchMain Formatting Errors</title>
+      <title>StopwatchMain Formatting Errors</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu');
+        th {
+          font-family: 'Ubuntu', sans-serif;
+        }
+        td {
+          font-family: 'Montserrat', sans-serif;
+        }
+      </style>
     </head>
     <body bgcolor="#FFFFFF">
-    <p><b>Coding Style Check Results</b></p>
-    <table border="1" cellspacing="0" cellpadding="2">
-      <tr bgcolor="#691616">
-          <th colspan="2"><b>Summary</b></th>
-      </tr>
-      <tr bgcolor="#FF9696">
-          <td>Total files checked</td>
-          <td><xsl:number level="any" value="count(descendant::file)"/></td>
-      </tr>
-      <tr bgcolor="#FF9696">
-          <td>Files with errors</td>
-          <td><xsl:number level="any" value="count(descendant::file[error])"/></td>
-      </tr>
-      <tr bgcolor="#FF9696">
-          <td>Total errors</td>
-          <td><xsl:number level="any" value="count(descendant::error)"/></td>
-      </tr>
-      <tr bgcolor="#FF9696">
-          <td>Errors per file</td>
-          <td><xsl:number level="any" value="count(descendant::error) div count(descendant::file)"/></td>
-      </tr>
-    </table>
-    <hr align="left" width="95%" size="1"/>
-    <p/>
+      <p><b>Coding Style Check Results</b></p>
+      <table border="1" cellspacing="0" cellpadding="2">
+        <tr bgcolor="#FC6565">
+            <th colspan="2"><b>Summary</b></th>
+        </tr>
+        <tr bgcolor="#FF9696">
+            <td>Total files checked</td>
+            <td><xsl:number level="any" value="count(descendant::file)"/></td>
+        </tr>
+        <tr bgcolor="#FF9696">
+            <td>Files with errors</td>
+            <td><xsl:number level="any" value="count(descendant::file[error])"/></td>
+        </tr>
+        <tr bgcolor="#FF9696">
+            <td>Total errors</td>
+            <td><xsl:number level="any" value="count(descendant::error)"/></td>
+        </tr>
+        <tr bgcolor="#FF9696">
+            <td>Errors per file</td>
+            <td><xsl:number level="any" value="count(descendant::error) div count(descendant::file)"/></td>
+        </tr>
+      </table>
+      <hr align="left" width="95%" size="1"/>
+      <p/>
       <xsl:apply-templates/>
     </body>
   </html>
 </xsl:template>
 
 <xsl:template match="file[error]">
-    <table bgcolor="691616" width="95%" border="1" cellspacing="0" cellpadding="2">
+    <table bgcolor="#FC6565" width="95%" border="1" cellspacing="0" cellpadding="2">
       <tr>
           <th> File: </th>
           <td>
