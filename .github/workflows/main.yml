@@ -38,6 +38,3 @@ jobs:
 
     - name: Run Checkstyle
       run: ./gradlew checkstyleMain
-
-          
-      
