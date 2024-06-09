@@ -42,6 +42,11 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+tasks.build {
+    dependsOn 'assemble'
+    finalizedBy 'test'
+}
+
 tasks.withType(Checkstyle) {
     reports {
         xml.required = false
